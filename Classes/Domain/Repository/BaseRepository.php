@@ -35,8 +35,23 @@ namespace T3B\ExtbaseCoreTables\Domain\Repository;
  */
 abstract class BaseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * Deactivate storage page
+     */
     public function initializeObject() {
         $querySettings = $this->createQuery()->getQuerySettings()->setRespectStoragePage(FALSE);
         $this->setDefaultQuerySettings($querySettings);
+    }
+
+    /**
+     * Find all records on a page
+     * @param $pid
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findByPid($pid) {
+        $query = $this->createQuery();
+        $query->equals('pid', $pid);
+
+        return $query->execute();
     }
 }

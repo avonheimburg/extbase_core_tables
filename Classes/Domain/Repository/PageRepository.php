@@ -27,5 +27,16 @@ namespace T3B\ExtbaseCoreTables\Domain\Repository;
  ***************************************************************/
 class PageRepository extends BaseRepository
 {
-
+    /**
+     * Get the current page
+     * @return \T3B\ExtbaseCoreTables\Domain\Model\Page the current page
+     */
+    public function currentPage() {
+        /**
+         * @var $tsfe \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
+         */
+        $tsfe = $GLOBALS['TSFE'];
+        $id = $tsfe->id;
+        return $this->findByUid($id);
+    }
 }

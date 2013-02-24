@@ -5,6 +5,12 @@ config.tx_extbase{
             T3B\ExtbaseCoreTables\Domain\Model\Page {
                 mapping {
                     tableName = pages
+                    columns {
+                    	title.mapOnProperty = title
+                    	subtitle.mapOnProperty = subtitle
+                    	doktype.mapOnProperty = dokType
+
+                    }
                 }
             }
 

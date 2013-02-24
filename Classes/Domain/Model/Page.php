@@ -52,7 +52,7 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @var integer
      */
-    protected $doktype;
+    protected $dokType;
 
     /**
      * @var boolean
@@ -89,17 +89,17 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @param int $doktype
      */
-    public function setDoktype($doktype)
+    public function setDokType($dokType)
     {
-        $this->doktype = $doktype;
+        $this->dokType = $dokType;
     }
 
     /**
      * @return int
      */
-    public function getDoktype()
+    public function getDokType()
     {
-        return $this->doktype;
+        return $this->dokType;
     }
 
     /**
@@ -182,6 +182,28 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
         return $this->title;
     }
 
+
+    // =================================================================================================================
+    // additional, dynamic properties
+    // =================================================================================================================
+
+    public function getOverlays() {
+        static $overlays;
+
+        if(empty($overlays)) {
+            /**
+             * @var $objectManager \TYPO3\CMS\Extbase\Object\ObjectManager
+             */
+            $objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
+            /**
+             * @var $overlayRepo \T3B\ExtbaseCoreTables\Domain\Repository\PageLanguageOverlayRepository
+             */
+            $overlayRepo = $objectManager->get('T3B\ExtbaseCoreTables\Domain\Repository\PageLanguageOverlayRepository');
+            $overlays = $overlayRepo->findByPid($this->getUid());
+        }
+
+        return $overlays;
+    }
 
 
 }

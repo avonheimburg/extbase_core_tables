@@ -30,7 +30,7 @@ pages, pages_language_overlay, sys_language
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'modify_tables' => '',
-	'clearCacheOnLoad' => 0,
+	'clearCacheOnLoad' => 1,
 	'lockType' => '',
 	'version' => '0.0.1',
 	'constraints' => array(
