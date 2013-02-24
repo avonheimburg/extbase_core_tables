@@ -10,7 +10,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-/** @var $_EXTKEY TYPE_NAME */
+/** @var $_EXTKEY string */
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Core Tables for Extbase',
 	'description' => 'Basic TYPO3 tables for use with extbase.
