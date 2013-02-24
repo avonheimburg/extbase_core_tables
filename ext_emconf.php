@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Basic TYPO3 tables for use with extbase.
 
 Currently supported:
-pages, pages_language_overlay, tt_content, sys_language, sys_domain
+pages, pages_language_overlay, sys_language
 ',
 	'category' => 'misc',
 	'author' => 'Anno v. Heimburg',
