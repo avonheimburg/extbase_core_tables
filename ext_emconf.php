@@ -19,7 +19,7 @@ Currently supported:
 pages, pages_language_overlay, tt_content, sys_language, sys_domain
 ',
 	'category' => 'misc',
-	'author' => 'Anno v, Heimburg',
+	'author' => 'Anno v. Heimburg',
 	'author_email' => 'anno@vonheimburg.de',
 	'author_company' => '',
 	'shy' => '',

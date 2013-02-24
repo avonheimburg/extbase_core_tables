@@ -4,8 +4,8 @@ namespace T3B\ExtbaseCoreTables\Domain\Model;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Anno v, Heimburg <anno@vonheimburg.de>
- *  
+ *  (c) 2013 Anno v. Heimburg <anno@vonheimburg.de>
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is

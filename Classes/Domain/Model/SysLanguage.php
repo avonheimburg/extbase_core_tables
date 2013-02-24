@@ -4,7 +4,7 @@ namespace T3B\ExtbaseCoreTables\Domain\Model;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Anno v, Heimburg <anno@vonheimburg.de>
+ *  (c) 2013 Anno v. Heimburg <anno@vonheimburg.de>
  *
  *  All rights reserved
  *
