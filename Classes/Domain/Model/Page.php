@@ -181,30 +181,5 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     {
         return $this->title;
     }
-
-
-    // =================================================================================================================
-    // additional, dynamic properties
-    // =================================================================================================================
-
-    public function getOverlays() {
-        static $overlays;
-
-        if(empty($overlays)) {
-            /**
-             * @var $objectManager \TYPO3\CMS\Extbase\Object\ObjectManager
-             */
-            $objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-            /**
-             * @var $overlayRepo \T3B\ExtbaseCoreTables\Domain\Repository\PageLanguageOverlayRepository
-             */
-            $overlayRepo = $objectManager->get('T3B\ExtbaseCoreTables\Domain\Repository\PageLanguageOverlayRepository');
-            $overlays = $overlayRepo->findByPid($this->getUid());
-        }
-
-        return $overlays;
-    }
-
-
 }
 ?>

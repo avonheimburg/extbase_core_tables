@@ -47,7 +47,7 @@ class SysLanguage extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @var \Tx_StaticInfoTablesExtbase_Domain_Model_StaticLanguage
      */
-    protected $language;
+    protected $staticLanguage;
 
     /**
      * @param string $flag
@@ -68,17 +68,17 @@ class SysLanguage extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @param \Tx_StaticInfoTablesExtbase_Domain_Model_StaticLanguage $language
      */
-    public function setLanguage($language)
+    public function setStaticLanguage($language)
     {
-        $this->language = $language;
+        $this->staticLanguage = $language;
     }
 
     /**
      * @return \Tx_StaticInfoTablesExtbase_Domain_Model_StaticLanguage
      */
-    public function getLanguage()
+    public function getStaticLanguage()
     {
-        return $this->language;
+        return $this->staticLanguage;
     }
 
     /**
@@ -97,6 +97,19 @@ class SysLanguage extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
         return $this->title;
     }
 
+    /**
+     * Check whether the sys language is currently active
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        /**
+         * @var $tsfe \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
+         */
+        $tsfe = $GLOBALS['TSFE'];
+
+        return ($this->getUid() == $tsfe->sys_language_uid);
+    }
 
 }
 ?>

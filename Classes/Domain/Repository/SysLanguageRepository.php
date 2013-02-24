@@ -27,5 +27,9 @@ namespace T3B\ExtbaseCoreTables\Domain\Repository;
  ***************************************************************/
 class SysLanguageRepository extends BaseRepository
 {
-
+    protected function modifyDefaultQuerySettings(\TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings)
+    {
+        $querySettings->setRespectSysLanguage(FALSE);
+        return $querySettings;
+    }
 }

@@ -39,19 +39,18 @@ abstract class BaseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * Deactivate storage page
      */
     public function initializeObject() {
-        $querySettings = $this->createQuery()->getQuerySettings()->setRespectStoragePage(FALSE);
+        $querySettings = $this->createQuery()->getQuerySettings();
+        $querySettings->setRespectStoragePage(FALSE);
+        $querySettings = $this->modifyDefaultQuerySettings($querySettings);
         $this->setDefaultQuerySettings($querySettings);
     }
 
     /**
-     * Find all records on a page
-     * @param $pid
-     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * For child classes: modify the default query settings
+     * @param \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings
+     * @return \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface
      */
-    public function findByPid($pid) {
-        $query = $this->createQuery();
-        $query->equals('pid', $pid);
-
-        return $query->execute();
+    protected function modifyDefaultQuerySettings(\TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings) {
+        return $querySettings;
     }
 }

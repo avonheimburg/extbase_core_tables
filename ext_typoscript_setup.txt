@@ -14,20 +14,11 @@ config.tx_extbase{
                 }
             }
 
-            T3B\ExtbaseCoreTables\Domain\Model\PageLanguageOverlay {
-            	mapping {
-            		tableName = pages_language_overlay
-            		columns {
-            			sys_language_uid.mapOnProperty = sysLanguage
-                    }
-            	}
-            }
-
             T3B\ExtbaseCoreTables\Domain\Model\SysLanguage {
             	mapping {
             		tableName = sys_language
             		columns {
-            			static_lang_isocode.mapOnProperty = language
+            			static_lang_isocode.mapOnProperty = staticLanguage
             		}
             	}
             }

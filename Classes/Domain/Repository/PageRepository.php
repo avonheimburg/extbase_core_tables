@@ -31,7 +31,7 @@ class PageRepository extends BaseRepository
      * Get the current page
      * @return \T3B\ExtbaseCoreTables\Domain\Model\Page the current page
      */
-    public function currentPage() {
+    public function findCurrentPage() {
         /**
          * @var $tsfe \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
          */
